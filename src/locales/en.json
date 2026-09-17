@@ -5,80 +5,81 @@
     "expertise": "Expertise",
     "approach": "Our Approach",
     "contact": "Contact",
-    "book": "Book an Appt",
+    "book": "Book a Consultation",
     "subtitle": "Dakar • OHADA / UEMOA"
   },
   "hero": {
-    "badge": "Multidisciplinary Consulting Firm • Dakar",
-    "title": "LAW, TAXATION, FINANCE — ONE SINGLE SIGNATURE.",
-    "cta": "Book a Consultation",
-    "desc": "Multidisciplinary firm based in Dakar, structured to support the corporate lifecycle in Senegal and the OHADA/UEMOA region."
+    "badge": "Advisory Firm • Dakar",
+    "title": "LEGAL, TAX & CORPORATE FINANCE — ONE FIRM. ONE SIGNATURE.",
+    "cta": "Connect with LegalEase Partners",
+    "desc": "Multidisciplinary firm based in Dakar, advising on legal, tax, and corporate finance matters in Senegal and the OHADA region."
   },
   "philosophy": {
-    "badge": "INTERVENTION PHILOSOPHY",
-    "subtitle": "Integrated Strategic Vision",
-    "background": "MULTIDISCIPLINARY",
+    "badge": "Our Approach",
+    "subtitle": "A unified perspective",
+    "background": "LEGAL",
     "phrases": [
       {
-        "lead": "An investment",
-        "focus": "is not just a contract.",
-        "accent": "Contractual security & governance"
-      },
-      {
-        "lead": "Fundraising",
-        "focus": "is not just a valuation.",
-        "accent": "Shareholders' agreement & equity dilution"
-      },
-      {
-        "lead": "A restructuring",
-        "focus": "is not just a tax choice.",
-        "accent": "Business continuity & social liabilities"
-      },
-      {
         "lead": "LegalEase Partners",
-        "focus": "combines these expertises to secure your strategic decisions.",
-        "accent": "One single signature for your key operations"
+        "focus": "brings together legal, tax, and corporate finance expertise within a single advisory framework.",
+        "accent": "Integrated Guidance"
+      },
+      {
+        "lead": "This approach",
+        "focus": "allows us to support corporate decisions, transactions, and transformations with a coherent vision.",
+        "accent": "Legal & Financial Security"
       }
     ],
-    "hover_prefix": "Targeted prism: ",
-    "hover_default": "Hover or scroll to explore our synergy of skills"
+    "hover_prefix": "",
+    "hover_default": " "
   },
   "team": {
-    "badge": "Governance & Departments",
-    "title": "Our Leadership Team",
-    "discover": "Discover the full team",
+    "badge": "Team",
+    "title": "Our Leadership",
+    "discover": "View full profiles",
     "back": "Back to Home",
-    "intro": "The firm is organized around two departments, each led by a Partner, combining rigorous international methodology with deep roots in Senegalese law and practice.",
+    "intro": "The firm relies on two complementary departments to support our clients' legal, tax, and financial challenges, combining international rigor with mastery of Senegalese law.",
     "roles": {
       "ibrahima": "Managing Partner",
       "saliou": "Co-Principal"
     },
     "departments": {
-      "ibrahima_title": "Legal and Tax Department",
-      "ibrahima_desc": "The Legal and Tax Department leads all of the firm's consulting, litigation, and legal/tax structuring missions: corporate law, labor law, corporate and group taxation, civil and commercial litigation, contracts, intellectual property, and regulatory support for operations conducted by the firm's clients.",
-      "saliou_title": "Corporate Finance Department",
-      "saliou_desc": "The Corporate Finance Department handles the financial engineering of operations: transaction structuring, capital arrangements, fundraising, business valuation, and supporting clients in their growth, restructuring, or equity investment operations."
+      "ibrahima_title": "Legal & Tax",
+      "ibrahima_desc": "Overseeing advisory, litigation, and tax structuring. The department assists companies with corporate law, contracts, labor law, intellectual property, and regulatory matters.",
+      "saliou_title": "Corporate Finance",
+      "saliou_desc": "Financial engineering of transactions: business valuation, modeling, fundraising, and advisory during growth, acquisition, or restructuring phases."
     },
-    "cta": "Request this department"
+    "cta": "Request a consultation"
   },
   "footer": {
-    "address": "Villa No. 112B Centenaire, Dakar, Senegal",
+    "address": "Villa N°112B Centenaire, Dakar, Senegal",
     "rccm": "RCCM : SN DKR 2026 B 16076",
     "ninea": "NINEA : 013018818 2A5",
-    "quickLinks": "Quick Links",
-    "legal": "Legal Mentions",
-    "contact": "Contact Us",
+    "quickLinks": "Navigation",
+    "legal": "Legal Notice",
+    "contact": "Contact",
+    "framework": "Operational Framework: ",
     "rights": "All rights reserved."
   },
   "booking": {
-    "title": "Book an Appointment",
-    "desc": "Select the relevant department to arrange an initial consultation.",
-    "department": "Department",
+    "badge": "Book a Consultation",
+    "title": "Connect with LegalEase Partners",
+    "desc": "Select the relevant department to schedule an initial consultation.",
+    "department": "Relevant Department",
     "name": "Full Name",
     "email": "Professional Email",
     "company": "Company / Organization",
-    "message": "Subject of your request",
+    "phone": "Phone Number",
+    "message": "Subject of Request (Optional)",
+    "confidentiality": "The information provided is used solely to process your request.",
     "submit": "Submit Request",
-    "cancel": "Cancel"
+    "successTitle": "Request successfully submitted",
+    "successDesc": "Thank you",
+    "successDesc2": "We will contact you shortly to schedule a consultation.",
+    "close": "Close"
+  },
+  "lifecycle": {
+    "title": "Supporting your business at every stage",
+    "desc": "From initial incorporation to divestment, we align legal, tax, and finance at every critical milestone."
   }
 }

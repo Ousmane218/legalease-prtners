@@ -59,8 +59,7 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-[#0D0D0C]/80 backdrop-blur-sm"
+          className="fixed inset-0 bg-[#0D0D0C]/90"
         />
 
         {/* Modal Container */}
@@ -84,8 +83,8 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
             <div>
               {/* Header */}
               <div className="mb-6 pb-4 border-b border-[#111111]/10 pr-8">
-                <span className="text-[10px] font-mono tracking-widest text-[#B6966B] uppercase">
-                  {t('booking.badge', 'Consultation Stratégique Confidentielle')}
+                <span className="text-[10px] font-mono tracking-wide text-[#C5A880] uppercase">
+                  {t('booking.badge')}
                 </span>
                 <h3 className="font-serif-title text-2xl sm:text-3xl font-semibold text-[#111111] mt-1">
                   {t('booking.title')}
@@ -131,7 +130,7 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
                       <input
                         type="text"
                         required
-                        placeholder="Ex: Babacar Ndiaye, Directeur Général"
+                        placeholder="Ex: Babacar Ndiaye"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         className="w-full px-3 py-2.5 bg-white border border-[#111111]/25 focus:border-[#111111] focus:outline-none text-xs"
@@ -147,7 +146,7 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
                       <input
                         type="text"
                         required
-                        placeholder="Ex: Sahel Tech SAS"
+                        placeholder="Ex: Sahel Entreprise"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full px-3 py-2.5 bg-white border border-[#111111]/25 focus:border-[#111111] focus:outline-none text-xs"
@@ -165,7 +164,7 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
                     <input
                       type="email"
                       required
-                      placeholder="directoire@groupe.sn"
+                      placeholder="contact@societe.sn"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-3 py-2.5 bg-white border border-[#111111]/25 focus:border-[#111111] focus:outline-none text-xs"
@@ -194,7 +193,7 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Précisez brièvement l'opération visée (ex: Levée de fonds Série A, restructuration holding, audit de conformité fiscale OHADA)..."
+                    placeholder="Précisez brièvement l'objet de votre demande..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-3 py-2.5 bg-white border border-[#111111]/25 focus:border-[#111111] focus:outline-none text-xs"
@@ -204,14 +203,13 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
                 {/* Confidentiality notice */}
                 <div className="flex items-center space-x-2 text-[10px] text-[#111111]/60 font-mono pt-1">
                   <ShieldCheck className="w-4 h-4 text-[#B6966B] shrink-0" />
-                  <span>{t('booking.confidentiality', 'Tous les échanges sont protégés par le secret professionnel et la confidentialité B2B.')}</span>
+                  <span>{t('booking.confidentiality')}</span>
                 </div>
 
                 {/* Submit button */}
                 <div className="pt-3">
                   <button
-                    type="submit"
-                    className="w-full py-3 px-6 bg-[#111111] hover:bg-[#0D0D0C] text-[#F9F9F6] font-mono uppercase text-xs tracking-widest flex items-center justify-center space-x-2 transition-colors cursor-pointer"
+                    className="w-full py-3 px-6 bg-[#111111] hover:bg-[#0D0D0C] text-[#F9F9F6] font-mono uppercase text-xs tracking-wide flex items-center justify-center space-x-2 transition-colors cursor-pointer"
                   >
                     <span>{t('booking.submit')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -227,20 +225,16 @@ export default function BookingModal({ isOpen, onClose, preselectedPillar }: Boo
               <h3 className="font-serif-title text-2xl font-bold text-[#111111]">
                 {t('booking.successTitle', 'Demande transmise avec succès')}
               </h3>
-              <p className="font-serif-editorial text-sm text-[#111111]/80 max-w-md mx-auto leading-relaxed">
-                {t('booking.successDesc', 'Merci')} {formData.fullName}. {t('booking.successDesc2', "Le secrétariat des associés prendra contact avec vous sous 24 heures pour convenir d'un créneau confidentiel.")}
+              <p className="font-serif-editorial text-sm text-[#111111]/80 max-w-md mx-auto leading-relaxed mb-6">
+                {t('booking.successDesc')} {formData.fullName}. {t('booking.successDesc2')}
               </p>
-              <div className="p-4 bg-white border border-[#111111]/15 max-w-md mx-auto text-left text-xs font-mono space-y-1">
-                <div><span className="text-[#B6966B]">Pôle assigné :</span> {pillar}</div>
-                <div><span className="text-[#B6966B]">Société :</span> {formData.company || 'Non renseigné'}</div>
-                <div><span className="text-[#B6966B]">Lieu :</span> Dakar (Villa Centenaire) ou Visioconférence</div>
-              </div>
+
               <div className="pt-4">
                 <button
                   onClick={handleReset}
-                  className="px-6 py-2.5 bg-[#111111] text-[#F9F9F6] font-mono text-xs uppercase tracking-widest"
+                  className="px-6 py-2.5 bg-[#111111] text-[#F9F9F6] font-mono text-xs uppercase tracking-wide"
                 >
-                  {t('booking.close', 'Fermer')}
+                  {t('booking.close')}
                 </button>
               </div>
             </div>

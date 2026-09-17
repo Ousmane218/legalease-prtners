@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Layers, ShieldCheck, DollarSign, FileText } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
 import { useContent } from '../data/content';
 import { useTranslation } from 'react-i18next';
 
@@ -11,7 +11,7 @@ interface ClientLifecycleProps {
 export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps) {
   const { LIFECYCLE_STAGES } = useContent();
   const { t } = useTranslation();
-  const [activeStageIndex, setActiveStageIndex] = useState<number>(2); // Default to "Levée de Fonds" as requested in examples
+  const [activeStageIndex, setActiveStageIndex] = useState<number>(2);
 
   const currentStage = LIFECYCLE_STAGES[activeStageIndex];
 
@@ -32,8 +32,8 @@ export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps)
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#B6966B] uppercase">
-            // {t('lifecycle.badge', '04. VISION TEMPORELLE & CROISSANCE')}
+          <span className="text-xs uppercase tracking-wide text-[#C5A880]">
+            Accompagnement
           </span>
           <h2 className="font-serif-title text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#111111] mt-3">
             {t('lifecycle.title', "L'accompagnement de votre entreprise à chaque étape")}
@@ -45,32 +45,24 @@ export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps)
 
         {/* Interactive Horizontal Timeline with Clickable Stages */}
         <div className="relative mb-12 sm:mb-16">
-          
-          {/* Background Timeline Connector Line */}
-          <div className="hidden md:block absolute top-1/2 left-4 right-4 h-[1px] bg-[#111111]/15 -translate-y-1/2 z-0" />
-
-          {/* Stages Row */}
-          <div className="flex items-center justify-between overflow-x-auto pb-4 md:pb-0 gap-3 sm:gap-4 z-10 relative no-scrollbar">
+          <div className="flex items-center justify-between overflow-x-auto pb-4 md:pb-0 gap-3 sm:gap-4 z-10 relative no-scrollbar border-b border-[#111111]/10">
             {LIFECYCLE_STAGES.map((stage, index) => {
               const isSelected = index === activeStageIndex;
               return (
                 <button
                   key={stage.id}
                   onClick={() => setActiveStageIndex(index)}
-                  className={`group relative shrink-0 px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-mono tracking-wider uppercase transition-all duration-300 border cursor-pointer ${
+                  className={`relative shrink-0 px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer ${
                     isSelected
-                      ? 'bg-[#111111] text-[#F9F9F6] border-[#111111] shadow-md scale-105'
-                      : 'bg-[#F9F9F6] text-[#111111]/70 border-[#111111]/20 hover:border-[#111111] hover:text-[#111111]'
+                      ? 'text-[#111111]'
+                      : 'text-[#111111]/50 hover:text-[#111111]'
                   }`}
                 >
-                  <span className="inline-block mr-1.5 opacity-60">[{String(index + 1).padStart(2, '0')}]</span>
                   <span>{stage.name}</span>
-
-                  {/* Little active dot indicator */}
                   {isSelected && (
                     <motion.div
                       layoutId="activeTimelinePill"
-                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#B6966B]"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#111111]"
                     />
                   )}
                 </button>
@@ -78,24 +70,23 @@ export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps)
             })}
           </div>
 
-          {/* Navigation Arrows for Mobile & Desktop */}
           <div className="flex items-center justify-end space-x-2 mt-4 md:hidden">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full border border-[#111111]/20 text-[#111111] hover:bg-[#111111]/5"
+              className="p-2 text-[#111111]/50 hover:text-[#111111]"
               aria-label="Étape précédente"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
-            <span className="text-xs font-mono">
+            <span className="text-sm font-medium">
               {activeStageIndex + 1} / {LIFECYCLE_STAGES.length}
             </span>
             <button
               onClick={handleNext}
-              className="p-2 rounded-full border border-[#111111]/20 text-[#111111] hover:bg-[#111111]/5"
+              className="p-2 text-[#111111]/50 hover:text-[#111111]"
               aria-label="Étape suivante"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -104,130 +95,83 @@ export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps)
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStage.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.35 }}
-            className="space-y-8"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="space-y-12"
           >
-            {/* Stage Tagline Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 bg-[#111111]/[0.03] border border-[#111111]/15 gap-4">
-              <div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#B6966B]">
-                    {t('lifecycle.selectedStage', 'Étape Clé Sélectionnée :')}
-                  </span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#111111]">
-                    [ {currentStage.name} ]
-                  </span>
-                </div>
-                <p className="font-serif-editorial text-lg sm:text-xl text-[#111111] mt-1 font-medium italic">
-                  {currentStage.tagline}
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[#111111]/10">
+              <div className="max-w-2xl">
+                <p className="font-serif-editorial text-2xl sm:text-3xl text-[#111111] font-light italic leading-snug">
+                  "{currentStage.tagline}"
                 </p>
               </div>
 
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center justify-center px-4 py-2 text-xs font-mono uppercase tracking-wider text-[#111111] border border-[#111111] hover:bg-[#111111] hover:text-[#F9F9F6] transition-colors self-start sm:self-auto shrink-0"
+                className="group inline-flex items-center text-sm font-medium tracking-wide uppercase text-[#111111] hover:text-[#C5A880] transition-colors shrink-0"
               >
-                {t('lifecycle.auditPhase', 'Auditer cette phase ↗')}
+                Prendre rendez-vous
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
 
-            {/* 3-Column Split Grid: Volet Financier | Volet Juridique | Volet Fiscal */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 3-Column Split Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
               
               {/* Volet Financier */}
-              <div className="p-6 sm:p-7 bg-[#FFFFFF] border border-[#111111]/15 shadow-sm flex flex-col justify-between group hover:border-[#B6966B] transition-colors">
-                <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-[#111111]/10">
-                    <div className="flex items-center space-x-2 text-[#111111]">
-                      <DollarSign className="w-4 h-4 text-[#B6966B]" />
-                      <h3 className="font-serif-title text-xl font-bold tracking-wide">
-                        {currentStage.voletFinancier.title}
-                      </h3>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#B6966B] uppercase tracking-widest">
-                      Finance
-                    </span>
-                  </div>
-                  <p className="text-xs font-medium text-[#111111]/80 mt-3 mb-4 font-sans-ui">
-                    {currentStage.voletFinancier.description}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {currentStage.voletFinancier.points.map((pt, i) => (
-                      <li key={i} className="text-xs text-[#111111]/70 flex items-start space-x-2">
-                        <span className="text-[#B6966B] font-bold mt-0.5">•</span>
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="pt-5 mt-6 border-t border-[#111111]/10 text-[10px] font-mono uppercase text-[#111111]/40">
-                  Livrable : Modèle financier & Mémorandum
-                </div>
+              <div className="flex flex-col space-y-4">
+                <h3 className="font-serif-title text-xl tracking-wide text-[#111111] border-b border-[#111111]/10 pb-4">
+                  {currentStage.voletFinancier.title}
+                </h3>
+                <p className="text-sm text-[#111111]/80 font-medium">
+                  {currentStage.voletFinancier.description}
+                </p>
+                <ul className="space-y-3 pt-2">
+                  {currentStage.voletFinancier.points.map((pt, i) => (
+                    <li key={i} className="text-sm text-[#111111]/70 flex items-start space-x-2">
+                      <span className="text-[#C5A880] mt-1 text-[10px]">●</span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Volet Juridique */}
-              <div className="p-6 sm:p-7 bg-[#FFFFFF] border border-[#111111]/15 shadow-sm flex flex-col justify-between group hover:border-[#B6966B] transition-colors">
-                <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-[#111111]/10">
-                    <div className="flex items-center space-x-2 text-[#111111]">
-                      <ShieldCheck className="w-4 h-4 text-[#B6966B]" />
-                      <h3 className="font-serif-title text-xl font-bold tracking-wide">
-                        {currentStage.voletJuridique.title}
-                      </h3>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#B6966B] uppercase tracking-widest">
-                      Droit
-                    </span>
-                  </div>
-                  <p className="text-xs font-medium text-[#111111]/80 mt-3 mb-4 font-sans-ui">
-                    {currentStage.voletJuridique.description}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {currentStage.voletJuridique.points.map((pt, i) => (
-                      <li key={i} className="text-xs text-[#111111]/70 flex items-start space-x-2">
-                        <span className="text-[#B6966B] font-bold mt-0.5">•</span>
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="pt-5 mt-6 border-t border-[#111111]/10 text-[10px] font-mono uppercase text-[#111111]/40">
-                  Livrable : Actes certifiés & Pactes OHADA
-                </div>
+              <div className="flex flex-col space-y-4">
+                <h3 className="font-serif-title text-xl tracking-wide text-[#111111] border-b border-[#111111]/10 pb-4">
+                  {currentStage.voletJuridique.title}
+                </h3>
+                <p className="text-sm text-[#111111]/80 font-medium">
+                  {currentStage.voletJuridique.description}
+                </p>
+                <ul className="space-y-3 pt-2">
+                  {currentStage.voletJuridique.points.map((pt, i) => (
+                    <li key={i} className="text-sm text-[#111111]/70 flex items-start space-x-2">
+                      <span className="text-[#C5A880] mt-1 text-[10px]">●</span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Volet Fiscal */}
-              <div className="p-6 sm:p-7 bg-[#FFFFFF] border border-[#111111]/15 shadow-sm flex flex-col justify-between group hover:border-[#B6966B] transition-colors">
-                <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-[#111111]/10">
-                    <div className="flex items-center space-x-2 text-[#111111]">
-                      <FileText className="w-4 h-4 text-[#B6966B]" />
-                      <h3 className="font-serif-title text-xl font-bold tracking-wide">
-                        {currentStage.voletFiscal.title}
-                      </h3>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#B6966B] uppercase tracking-widest">
-                      Fiscalité
-                    </span>
-                  </div>
-                  <p className="text-xs font-medium text-[#111111]/80 mt-3 mb-4 font-sans-ui">
-                    {currentStage.voletFiscal.description}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {currentStage.voletFiscal.points.map((pt, i) => (
-                      <li key={i} className="text-xs text-[#111111]/70 flex items-start space-x-2">
-                        <span className="text-[#B6966B] font-bold mt-0.5">•</span>
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="pt-5 mt-6 border-t border-[#111111]/10 text-[10px] font-mono uppercase text-[#111111]/40">
-                  Livrable : Note d’impact fiscal & Rescrits
-                </div>
+              <div className="flex flex-col space-y-4">
+                <h3 className="font-serif-title text-xl tracking-wide text-[#111111] border-b border-[#111111]/10 pb-4">
+                  {currentStage.voletFiscal.title}
+                </h3>
+                <p className="text-sm text-[#111111]/80 font-medium">
+                  {currentStage.voletFiscal.description}
+                </p>
+                <ul className="space-y-3 pt-2">
+                  {currentStage.voletFiscal.points.map((pt, i) => (
+                    <li key={i} className="text-sm text-[#111111]/70 flex items-start space-x-2">
+                      <span className="text-[#C5A880] mt-1 text-[10px]">●</span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
             </div>

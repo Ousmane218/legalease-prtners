@@ -30,9 +30,9 @@ export default function Footer({ onOpenBooking }: FooterProps) {
           <div className="flex flex-wrap items-center gap-4">
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center justify-center px-6 py-3 text-xs font-mono uppercase tracking-widest text-[#0D0D0C] bg-[#F9F9F6] hover:bg-[#C5A880] transition-colors rounded-none cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 text-xs font-mono uppercase tracking-wide text-[#0D0D0C] bg-[#F9F9F6] hover:bg-[#C5A880] transition-colors rounded-none cursor-pointer"
             >
-              <span>{t('footer.book', 'Prendre RDV à Dakar')}</span>
+              <span>{t('footer.book', 'Prendre Rendez-vous')}</span>
               <ArrowUpRight className="w-4 h-4 ml-1.5" />
             </button>
             <a
@@ -57,14 +57,6 @@ export default function Footer({ onOpenBooking }: FooterProps) {
                 <MapPin className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
                 <span>{LEGAL_INFO.siege}</span>
               </p>
-              <p className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#C5A880] shrink-0" />
-                <span>{LEGAL_INFO.contactEmail}</span>
-              </p>
-              <p className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#C5A880] shrink-0" />
-                <span>{LEGAL_INFO.phone}</span>
-              </p>
             </div>
           </div>
 
@@ -76,22 +68,12 @@ export default function Footer({ onOpenBooking }: FooterProps) {
             <ul className="space-y-2 text-[#F9F9F6]/70 font-sans-ui">
               <li>
                 <a href="#expertises" className="hover:text-[#F9F9F6] transition-colors">
-                  • Juridique & Droit des Sociétés (Dir. I. S. MBAYE)
+                  • Juridique & Fiscal
                 </a>
               </li>
               <li>
                 <a href="#expertises" className="hover:text-[#F9F9F6] transition-colors">
-                  • Corporate Finance & Levées (Dir. S. S. M. GUEYE)
-                </a>
-              </li>
-              <li>
-                <a href="#expertises" className="hover:text-[#F9F9F6] transition-colors">
-                  • Fiscalité des Groupes & UEMOA
-                </a>
-              </li>
-              <li>
-                <a href="#expertises" className="hover:text-[#F9F9F6] transition-colors">
-                  • Horizon Tech, IA & LegalTech
+                  • Corporate Finance
                 </a>
               </li>
             </ul>
@@ -105,30 +87,24 @@ export default function Footer({ onOpenBooking }: FooterProps) {
             <p className="text-[#F9F9F6]/70 font-sans-ui leading-relaxed">
               {t('footer.jurisdiction_desc', 'Intervention accréditée sous le cadre de l’OHADA (17 pays membres), des directives bancaires et fiscales de l’UEMOA, et du droit commercial de la République du Sénégal.')}
             </p>
-            <div className="flex items-center space-x-3 text-[10px] font-mono text-[#C5A880]">
-              <span>[ SÉNÉGAL ]</span>
-              <span>[ OHADA ]</span>
-              <span>[ UEMOA ]</span>
-              <span>[ CEDEAO ]</span>
+            <div className="flex items-center space-x-3 text-xs text-[#C5A880]">
+              <span>Sénégal</span>
+              <span>•</span>
+              <span>OHADA</span>
+              <span>•</span>
+              <span>UEMOA</span>
             </div>
           </div>
         </div>
 
         {/* Explicit Legal Compliance Declarations (B2B Trust) */}
         <div className="pt-8 text-xs text-[#F9F9F6]/60 font-mono space-y-3">
-          <div className="p-4 bg-[#141413] border border-[#F9F9F6]/10 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div>
-              <span className="text-[#C5A880]">• {t('footer.structure', 'Structure : ')}</span>
-              <span>{LEGAL_INFO.entity} — {t('footer.capital', 'Capital social : ')}{LEGAL_INFO.capital}</span>
-            </div>
-            <div>
-              <span className="text-[#C5A880]">• {t('footer.registration', 'Enregistrements : ')}</span>
-              <span>RCCM : {LEGAL_INFO.rccm} | NINEA : {LEGAL_INFO.ninea}</span>
-            </div>
-            <div className="md:col-span-2">
-              <span className="text-[#C5A880]">• {t('footer.framework', "Cadre d'intervention : ")}</span>
-              <span>{LEGAL_INFO.cadre}</span>
-            </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span>{LEGAL_INFO.entity}</span>
+            <span className="text-[#F9F9F6]/30">|</span>
+            <span>RCCM : {LEGAL_INFO.rccm}</span>
+            <span className="text-[#F9F9F6]/30">|</span>
+            <span>NINEA : {LEGAL_INFO.ninea}</span>
           </div>
 
           {/* Bottom Copyright */}

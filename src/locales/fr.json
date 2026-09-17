@@ -5,80 +5,81 @@
     "expertise": "Expertises",
     "approach": "Notre Approche",
     "contact": "Contact",
-    "book": "Prendre RDV",
+    "book": "Prendre rendez-vous",
     "subtitle": "Dakar • OHADA / UEMOA"
   },
   "hero": {
-    "badge": "Cabinet de Conseil Pluridisciplinaire • Dakar",
+    "badge": "Cabinet de Conseil • Dakar",
     "title": "LE DROIT, LA FISCALITÉ, LA FINANCE — UNE SEULE SIGNATURE.",
-    "cta": "Réserver un Conseil",
-    "desc": "Cabinet pluridisciplinaire basé à Dakar, structuré pour accompagner le cycle de vie des entreprises au Sénégal et dans l'espace OHADA/UEMOA."
+    "cta": "Échanger avec LegalEase Partners",
+    "desc": "Cabinet d'affaires pluridisciplinaire structuré pour accompagner les opérations juridiques, fiscales et financières au Sénégal et dans l'espace OHADA."
   },
   "philosophy": {
-    "badge": "PHILOSOPHIE D’INTERVENTION",
-    "subtitle": "Vision Stratégique Intégrée",
-    "background": "PLURIDISCIPLINAIRE",
+    "badge": "Notre approche",
+    "subtitle": "Une lecture commune",
+    "background": "LEGAL",
     "phrases": [
       {
-        "lead": "Un investissement",
-        "focus": "n'est pas qu'un contrat.",
-        "accent": "Sécurisation contractuelle & gouvernance"
-      },
-      {
-        "lead": "Une levée de fonds",
-        "focus": "n'est pas qu'une valorisation.",
-        "accent": "Pacte d'actionnaires & dilution capitalistique"
-      },
-      {
-        "lead": "Une restructuration",
-        "focus": "n'est pas qu'un choix fiscal.",
-        "accent": "Continuité de l'exploitation & passifs sociaux"
-      },
-      {
         "lead": "LegalEase Partners",
-        "focus": "réunit ces expertises pour sécuriser vos décisions stratégiques.",
-        "accent": "Une seule signature pour vos opérations clés"
+        "focus": "réunit le droit, la fiscalité et la finance dans une lecture commune des enjeux de l’entreprise.",
+        "accent": "Accompagnement transversal"
+      },
+      {
+        "lead": "Cette approche",
+        "focus": "permet d’accompagner les décisions, les opérations et les phases de transformation avec une vision cohérente.",
+        "accent": "Sécurité juridique & financière"
       }
     ],
-    "hover_prefix": "Prisme ciblé : ",
-    "hover_default": "Survolez ou faites défiler pour explorer la synergie des compétences"
+    "hover_prefix": "",
+    "hover_default": " "
   },
   "team": {
-    "badge": "Gouvernance & Départements",
+    "badge": "Équipe",
     "title": "Notre Équipe Dirigeante",
-    "discover": "Découvrir l'équipe complète",
+    "discover": "Voir les profils complets",
     "back": "Retour à l'accueil",
-    "intro": "Le cabinet est organisé autour de deux départements dirigés chacun par un Partner, alliant rigueur méthodologique internationale et ancrage dans le droit et la pratique sénégalais.",
+    "intro": "Le cabinet s'appuie sur deux départements complémentaires pour accompagner les enjeux juridiques, fiscaux et financiers de ses clients, alliant rigueur internationale et maîtrise du droit sénégalais.",
     "roles": {
       "ibrahima": "Managing Partner",
       "saliou": "Co-Principal"
     },
     "departments": {
-      "ibrahima_title": "Département Juridique et Fiscal",
-      "ibrahima_desc": "Le Département Juridique et Fiscal pilote l'ensemble des missions de conseil, de contentieux et de structuration juridique et fiscale du cabinet : droit des sociétés, droit du travail, fiscalité des entreprises et des groupes, contentieux civil et commercial, contrats, propriété intellectuelle, et accompagnement réglementaire des opérations menées par les clients du cabinet.",
-      "saliou_title": "Département Corporate Finance",
-      "saliou_desc": "Le Département Corporate Finance prend en charge l'ingénierie financière des opérations : structuration de transactions, montages capitalistiques, levées de fonds, évaluation d'entreprises et accompagnement des clients dans leurs opérations de croissance, de restructuration ou de prise de participation."
+      "ibrahima_title": "Juridique & Fiscal",
+      "ibrahima_desc": "Pilotage des missions de conseil, de contentieux et de structuration juridique et fiscale. Le département accompagne les entreprises sur le droit des sociétés, les contrats, le droit du travail, la propriété intellectuelle et les enjeux réglementaires.",
+      "saliou_title": "Corporate Finance",
+      "saliou_desc": "Ingénierie financière des opérations : évaluation d'entreprises, modélisation, levées de fonds et accompagnement dans les phases de croissance, d'acquisition ou de restructuration."
     },
-    "cta": "Solliciter ce département"
+    "cta": "Prendre rendez-vous"
   },
   "footer": {
     "address": "Villa N°112B Centenaire, Dakar, Sénégal",
     "rccm": "RCCM : SN DKR 2026 B 16076",
     "ninea": "NINEA : 013018818 2A5",
-    "quickLinks": "Liens Rapides",
+    "quickLinks": "Navigation",
     "legal": "Mentions Légales",
-    "contact": "Contactez-nous",
+    "contact": "Contact",
+    "framework": "Cadre d'intervention : ",
     "rights": "Tous droits réservés."
   },
   "booking": {
-    "title": "Prendre Rendez-vous",
-    "desc": "Sélectionnez le département concerné pour organiser une première consultation.",
-    "department": "Département",
+    "badge": "Prendre rendez-vous",
+    "title": "Échanger avec LegalEase Partners",
+    "desc": "Sélectionnez le département concerné pour organiser un premier échange.",
+    "department": "Département concerné",
     "name": "Nom complet",
     "email": "Email professionnel",
     "company": "Société / Organisation",
-    "message": "Sujet de votre demande",
+    "phone": "Téléphone",
+    "message": "Sujet de votre demande (Optionnel)",
+    "confidentiality": "Les informations transmises sont utilisées uniquement pour traiter votre demande.",
     "submit": "Envoyer la demande",
-    "cancel": "Annuler"
+    "successTitle": "Demande transmise avec succès",
+    "successDesc": "Merci",
+    "successDesc2": "Nous prendrons contact avec vous dans les meilleurs délais pour convenir d'un créneau d'échange.",
+    "close": "Fermer"
+  },
+  "lifecycle": {
+    "title": "L'accompagnement de votre entreprise à chaque étape",
+    "desc": "De l'immatriculation à la cession, nous alignons droit, fiscalité et finance à chaque jalon."
   }
 }

@@ -9,243 +9,196 @@ export const useContent = () => {
       id: 'juridique-fiscal',
       name: t('pillars.juridique.name', 'Juridique & Fiscal'),
       lead: 'Ibrahima Souleymane MBAYE',
-      shortDesc: t('pillars.juridique.desc', 'Sécurisation juridique exhaustive, conformité réglementaire et ingénierie fiscale au Sénégal et dans la zone OHADA.'),
-      keyHighlight: t('pillars.juridique.highlight', 'Expertise reconnue en droit des affaires et contentieux complexes'),
+      shortDesc: t('pillars.juridique.desc', 'Accompagnement juridique, conformité et fiscalité au Sénégal et dans la zone OHADA.'),
+      keyHighlight: t('pillars.juridique.highlight', 'Droit des affaires et fiscalité'),
       iconName: 'Scale',
       services: t('pillars.juridique.services', { returnObjects: true, defaultValue: [
-        'Droit des sociétés & gouvernance',
-        'Fiscalité des groupes & prix de transfert',
-        'Négociation et rédaction de contrats complexes',
-        'Droit du travail & restructurations sociales',
-        'Contentieux d’affaires & arbitrage OHADA',
-        'Propriété intellectuelle & actifs immatériels',
-        'Support réglementaire & conformité sectorielle (Mines, Énergie, Telecoms)',
+        'Droit des sociétés',
+        'Fiscalité',
+        'Droit du travail',
+        'Contrats',
+        'Contentieux',
+        'Réglementaire',
+        'Propriété intellectuelle'
       ]}) as string[],
     },
     {
       id: 'corporate-finance',
       name: t('pillars.finance.name', 'Corporate Finance'),
       lead: 'Serigne Saliou Mbacke GUEYE',
-      shortDesc: t('pillars.finance.desc', 'Modélisation avancée, levées de fonds et opérations capitalistiques stratégiques pour entreprises en forte croissance.'),
-      keyHighlight: t('pillars.finance.highlight', 'Plus de 100 transactions conseillées dans l’espace UEMOA'),
+      shortDesc: t('pillars.finance.desc', 'Ingénierie financière, levées de fonds et opérations capitalistiques.'),
+      keyHighlight: t('pillars.finance.highlight', 'Corporate Finance et Transactions'),
       iconName: 'TrendingUp',
       services: t('pillars.finance.services', { returnObjects: true, defaultValue: [
-        'Ingénierie financière & modélisation',
-        'Évaluation d’entreprise & fairness opinions',
-        'Levées de fonds (Equity, Dette privée, Mezzanine)',
-        'Montages capitalistiques & LBO / MBO',
-        'Restructurations de bilans & dettes bancaires',
-        'Prises de participation & joint-ventures',
+        'Ingénierie financière',
+        'Levées de fonds',
+        'Évaluation',
+        'Structuration',
+        'Restructuration',
+        'Prises de participation'
       ]}) as string[],
-    },
-    {
-      id: 'technologie-ia',
-      name: t('pillars.tech.name', 'Technologie & IA'),
-      lead: 'Future Practice — LegalTech & FinTech',
-      isFuturePractice: true,
-      shortDesc: t('pillars.tech.desc', 'Anticipation des ruptures technologiques, conformité des algorithmes et sécurisation des actifs numériques.'),
-      keyHighlight: t('pillars.tech.highlight', 'Pôle d’avant-garde dédié à la souveraineté numérique africaine'),
-      iconName: 'Cpu',
-      services: t('pillars.tech.services', { returnObjects: true, defaultValue: [
-        'Transformation digitale des fonctions support',
-        'Due Diligence technologique & cybersécurité',
-        'Automatisation des processus juridiques & fiscaux',
-        'Alignement stratégique & gouvernance de l’IA',
-      ]}) as string[],
-    },
+    }
   ];
 
-  const LIFECYCLE_STAGES: LifecycleStage[] = t('lifecycle', { returnObjects: true, defaultValue: [
+  const LIFECYCLE_STAGES: LifecycleStage[] = t('lifecycle_stages', { returnObjects: true, defaultValue: [
     {
       id: 'creation',
       name: 'Création',
-      tagline: 'Poser des fondations institutionnelles, fiscales et financières inattaquables.',
+      tagline: 'Poser les fondations institutionnelles, fiscales et financières.',
       voletFinancier: {
         title: 'Volet Financier',
-        description: 'Cadrage de la viabilité et structuration initiale du capital.',
+        description: 'Cadrage et structuration initiale du capital.',
         points: [
-          'Élaboration du business plan financier prévisionnel',
-          'Dimensionnement des besoins en fonds de roulement (BFR)',
-          'Structuration du capital d’amorçage & apports en compte courant',
+          'Élaboration du business plan financier',
+          'Structuration du capital d’amorçage'
         ],
       },
       voletJuridique: {
         title: 'Volet Juridique',
-        description: 'Choix de structure et formalités institutionnelles intégrales.',
+        description: 'Choix de structure et formalités institutionnelles.',
         points: [
-          'Choix de la forme sociale optimale (SAS, SA, SARL OHADA)',
-          'Rédaction sur-mesure des statuts constitutifs',
-          'Immatriculation RCCM, attribution NINEA & formalités de publicité légale',
+          'Choix de la forme sociale',
+          'Rédaction des statuts constitutifs'
         ],
       },
       voletFiscal: {
         title: 'Volet Fiscal',
-        description: 'Optimisation dès le premier jour d’activité.',
+        description: 'Optimisation et choix du régime.',
         points: [
-          'Sélection du régime d’imposition le plus avantageux',
-          'Agrément au Code des Investissements du Sénégal (exonérations fiscales)',
-          'Mise en place du calendrier fiscal & déclarations obligatoires',
+          'Sélection du régime d’imposition',
+          'Mise en place du calendrier fiscal'
         ],
       },
     },
     {
       id: 'structuration',
       name: 'Structuration',
-      tagline: 'Consolider les opérations, la gouvernance et les flux intra-groupe.',
+      tagline: 'Consolider les opérations et la gouvernance.',
       voletFinancier: {
         title: 'Volet Financier',
-        description: 'Outils de pilotage et rentabilité opérationnelle.',
+        description: 'Outils de pilotage.',
         points: [
-          'Mise en place de tableaux de bord financiers et KPI de gestion',
-          'Audit de rentabilité par centre de profit',
-          'Optimisation de la trésorerie et relation bancaire',
+          'Tableaux de bord financiers',
+          'Optimisation de la trésorerie'
         ],
       },
       voletJuridique: {
         title: 'Volet Juridique',
-        description: 'Cadre contractuel et gouvernance des instances de direction.',
+        description: 'Cadre contractuel et gouvernance.',
         points: [
-          'Mise en place des délégations de pouvoirs & gouvernance',
-          'Standardisation des contrats commerciaux et conditions générales',
-          'Audit de conformité sociale et contrats de travail cadres',
+          'Mise en place de la gouvernance',
+          'Standardisation des contrats commerciaux'
         ],
       },
       voletFiscal: {
         title: 'Volet Fiscal',
-        description: 'Cohérence transfrontalière et politique fiscale de groupe.',
+        description: 'Cohérence et politique fiscale.',
         points: [
-          'Documentation de prix de transfert et flux intra-groupe',
-          'Gestion des retenues à la source selon les conventions fiscales UEMOA',
-          'Revue fiscale annuelle préventive et sécurisation des déductions',
+          'Documentation des flux',
+          'Revue fiscale annuelle'
         ],
       },
     },
     {
-      id: 'levee-de-fonds',
-      name: 'Levée de Fonds',
-      tagline: 'Aligner valorisation financière, pacte d’actionnaires et neutralité fiscale.',
+      id: 'financement',
+      name: 'Financement',
+      tagline: 'Levée de fonds, valorisation et structuration financière.',
       voletFinancier: {
         title: 'Volet Financier',
-        description: 'Valorisation & Structuration financière',
+        description: 'Valorisation & Structuration.',
         points: [
-          'Évaluation multi-critères (DCF, Multiples, Scorecard)',
-          'Préparation de l’Info Memo & du Data Room financier',
-          'Négociation des termsheets & structuration des tranches de financement',
+          'Levée de fonds',
+          'Valorisation',
+          'Structuration financière'
         ],
       },
       voletJuridique: {
         title: 'Volet Juridique',
-        description: 'Pacte d’actionnaires & Due diligence investisseurs',
+        description: 'Documentation et engagements.',
         points: [
-          'Rédaction du pacte d’actionnaires (clauses de liquidité, ratchet, drag/tag)',
-          'Émission d’instruments complexes (BSA, obligations convertibles)',
-          'Accompagnement lors de la Due Diligence juridique & closing',
+          'Pactes d\'actionnaires',
+          'Documentation contractuelle',
+          'Due diligence'
         ],
       },
       voletFiscal: {
         title: 'Volet Fiscal',
-        description: 'Analyse d’exposition fiscale',
+        description: 'Analyse d’impact.',
         points: [
-          'Audit d’exposition fiscale pré-investissement',
-          'Impact fiscal des plus-values d’émission et droits d’enregistrement',
-          'Optimisation du schéma de détention post-entrée des investisseurs',
+          'Analyse d’impact fiscal',
+          'Structuration'
         ],
       },
     },
     {
-      id: 'transaction',
-      name: 'Transaction',
-      tagline: 'M&A, cessions, acquisitions et partenariats stratégiques majeurs.',
+      id: 'croissance',
+      name: 'Croissance',
+      tagline: 'M&A, cessions, acquisitions et partenariats stratégiques.',
       voletFinancier: {
         title: 'Volet Financier',
-        description: 'Due diligence financière & closing accounts',
+        description: 'Due diligence & modélisation.',
         points: [
-          'Due diligence financière acquéreur / vendeur (Vendor DD)',
-          'Modélisation des synergies et impact sur la rentabilité future',
-          'Calcul des ajustements de dette nette et BFR cible au closing',
+          'Due diligence financière',
+          'Modélisation des synergies'
         ],
       },
       voletJuridique: {
         title: 'Volet Juridique',
-        description: 'Protocole de cession (SPA) & Garanties d’actif/passif',
+        description: 'Contrats et garanties.',
         points: [
-          'Négociation du contrat de cession d’actions / d’actifs (SPA)',
-          'Rédaction de la convention de Garantie d’Actif et de Passif (GAP)',
-          'Obtention des autorisations réglementaires (Contrôle des concentrations UEMOA)',
+          'Contrats d\'acquisition',
+          'Garanties d’actif et de passif'
         ],
       },
       voletFiscal: {
         title: 'Volet Fiscal',
-        description: 'Fiscalité des plus-values & structuration de l’acquisition',
+        description: 'Structuration de l\'acquisition.',
         points: [
-          'Structuration de holding d’acquisition et déductibilité des intérêts',
-          'Traitement des plus-values de cession au Sénégal et à l’international',
-          'Sécurisation des exonérations fiscales sous le régime de fusion',
+          'Structuration fiscale',
+          'Traitement des plus-values'
         ],
       },
     },
     {
-      id: 'restructuration',
-      name: 'Restructuration',
-      tagline: 'Réorganisation capitalistique, rééchelonnement et renouveau stratégique.',
+      id: 'transformation',
+      name: 'Transformation',
+      tagline: 'Restructuration, réorganisation capitalistique et renouveau.',
       voletFinancier: {
         title: 'Volet Financier',
-        description: 'Renégociation de dettes bancaires & plans de continuité',
+        description: 'Renégociation et liquidité.',
         points: [
-          'Diagnostic financier indépendant & test de liquidité',
-          'Négociation de moratoires et réaménagement des dettes financières',
-          'Cession d’actifs non stratégiques pour désendettement rapide',
+          'Diagnostic financier',
+          'Réaménagement des dettes'
         ],
       },
       voletJuridique: {
         title: 'Volet Juridique',
-        description: 'Procédures préventives OHADA & réorganisation statutaire',
+        description: 'Procédures et réorganisation.',
         points: [
-          'Mise en œuvre du règlement préventif et de la conciliation OHADA',
-          'Restructuration du capital social (coup d’accordéon, réduction de capital)',
-          'Gestion des plans de sauvegarde de l’emploi et aspects sociaux',
+          'Restructuration du capital',
+          'Gestion des aspects sociaux'
         ],
       },
       voletFiscal: {
         title: 'Volet Fiscal',
-        description: 'Traitement des abandons de créances & reports déficitaires',
+        description: 'Traitement des abandons et déficits.',
         points: [
-          'Régime fiscal des abandons de créances à caractère financier ou commercial',
-          'Préservation des reports déficitaires lors des restructurations',
-          'Optimisation des coûts fiscaux liés aux fusions-absorptions',
+          'Régime fiscal des créances',
+          'Préservation des déficits'
         ],
       },
     },
   ] }) as LifecycleStage[];
 
-  const STATS_DATA: StatItem[] = t('stats', { returnObjects: true, defaultValue: [
-    {
-      value: '12+',
-      label: 'Départements',
-      sublabel: 'Pratiques sectorielles & transversales',
-    },
-    {
-      value: '100+',
-      label: 'Transactions',
-      sublabel: 'Conseillées dans l’espace OHADA/UEMOA',
-    },
-    {
-      value: '95%',
-      label: 'Taux de Réussite',
-      sublabel: 'Sur les dossiers contentieux et levées accompagnées',
-    },
-  ] }) as StatItem[];
+  const STATS_DATA: StatItem[] = []; // Removed
 
   const LEGAL_INFO = {
-    entity: 'LegalEase Partners SAS',
-    capital: '1 000 000 FCFA',
+    entity: 'LegalEase Partners',
     siege: 'Villa N°112B Centenaire, Dakar, Sénégal',
     rccm: 'SN DKR 2026 B 16076',
     ninea: '013018818 2A5',
-    cadre: t('legal_info.cadre', 'Droit sénégalais, Actes uniformes OHADA, Directives UEMOA'),
-    contactEmail: 'contact@legalease-partners.sn',
-    phone: '+221 33 820 00 00',
-    slogan: t('hero.title', 'Le droit, la fiscalité, la finance — une seule signature.'),
+    cadre: t('legal_info.cadre', 'Sénégal, OHADA, UEMOA'),
+    slogan: t('hero.title', 'LE DROIT, LA FISCALITÉ, LA FINANCE — UNE SEULE SIGNATURE.'),
   };
 
   return { PILLARS_DATA, LIFECYCLE_STAGES, STATS_DATA, LEGAL_INFO };
