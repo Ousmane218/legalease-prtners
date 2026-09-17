@@ -1,0 +1,6 @@
+{
+  "name": "LegalEase Partners",
+  "description": "Cabinet pluridisciplinaire de conseil juridique, fiscal et financier basé à Dakar, Sénégal (espace OHADA / UEMOA).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

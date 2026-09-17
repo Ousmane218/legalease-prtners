@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "team": "Équipe",
+    "expertise": "Expertises",
+    "approach": "Notre Approche",
+    "contact": "Contact",
+    "book": "Prendre RDV",
+    "subtitle": "Dakar • OHADA / UEMOA"
+  },
+  "hero": {
+    "badge": "Cabinet de Conseil Pluridisciplinaire • Dakar",
+    "title": "LE DROIT, LA FISCALITÉ, LA FINANCE — UNE SEULE SIGNATURE.",
+    "cta": "Réserver un Conseil",
+    "desc": "Cabinet pluridisciplinaire basé à Dakar, structuré pour accompagner le cycle de vie des entreprises au Sénégal et dans l'espace OHADA/UEMOA."
+  },
+  "philosophy": {
+    "badge": "PHILOSOPHIE D’INTERVENTION",
+    "subtitle": "Vision Stratégique Intégrée",
+    "background": "PLURIDISCIPLINAIRE",
+    "phrases": [
+      {
+        "lead": "Un investissement",
+        "focus": "n'est pas qu'un contrat.",
+        "accent": "Sécurisation contractuelle & gouvernance"
+      },
+      {
+        "lead": "Une levée de fonds",
+        "focus": "n'est pas qu'une valorisation.",
+        "accent": "Pacte d'actionnaires & dilution capitalistique"
+      },
+      {
+        "lead": "Une restructuration",
+        "focus": "n'est pas qu'un choix fiscal.",
+        "accent": "Continuité de l'exploitation & passifs sociaux"
+      },
+      {
+        "lead": "LegalEase Partners",
+        "focus": "réunit ces expertises pour sécuriser vos décisions stratégiques.",
+        "accent": "Une seule signature pour vos opérations clés"
+      }
+    ],
+    "hover_prefix": "Prisme ciblé : ",
+    "hover_default": "Survolez ou faites défiler pour explorer la synergie des compétences"
+  },
+  "team": {
+    "badge": "Gouvernance & Départements",
+    "title": "Notre Équipe Dirigeante",
+    "discover": "Découvrir l'équipe complète",
+    "back": "Retour à l'accueil",
+    "intro": "Le cabinet est organisé autour de deux départements dirigés chacun par un Partner, alliant rigueur méthodologique internationale et ancrage dans le droit et la pratique sénégalais.",
+    "roles": {
+      "ibrahima": "Managing Partner",
+      "saliou": "Co-Principal"
+    },
+    "departments": {
+      "ibrahima_title": "Département Juridique et Fiscal",
+      "ibrahima_desc": "Le Département Juridique et Fiscal pilote l'ensemble des missions de conseil, de contentieux et de structuration juridique et fiscale du cabinet : droit des sociétés, droit du travail, fiscalité des entreprises et des groupes, contentieux civil et commercial, contrats, propriété intellectuelle, et accompagnement réglementaire des opérations menées par les clients du cabinet.",
+      "saliou_title": "Département Corporate Finance",
+      "saliou_desc": "Le Département Corporate Finance prend en charge l'ingénierie financière des opérations : structuration de transactions, montages capitalistiques, levées de fonds, évaluation d'entreprises et accompagnement des clients dans leurs opérations de croissance, de restructuration ou de prise de participation."
+    },
+    "cta": "Solliciter ce département"
+  },
+  "footer": {
+    "address": "Villa N°112B Centenaire, Dakar, Sénégal",
+    "rccm": "RCCM : SN DKR 2026 B 16076",
+    "ninea": "NINEA : 013018818 2A5",
+    "quickLinks": "Liens Rapides",
+    "legal": "Mentions Légales",
+    "contact": "Contactez-nous",
+    "rights": "Tous droits réservés."
+  },
+  "booking": {
+    "title": "Prendre Rendez-vous",
+    "desc": "Sélectionnez le département concerné pour organiser une première consultation.",
+    "department": "Département",
+    "name": "Nom complet",
+    "email": "Email professionnel",
+    "company": "Société / Organisation",
+    "message": "Sujet de votre demande",
+    "submit": "Envoyer la demande",
+    "cancel": "Annuler"
+  }
+}
