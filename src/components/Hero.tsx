@@ -48,7 +48,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-cta-btn"
             onClick={onOpenBooking}
-            className="group inline-flex items-center justify-center px-7 sm:px-8 py-3.5 text-xs sm:text-sm font-medium tracking-wide uppercase text-[#F9F9F6] bg-[#111111] rounded hover:bg-[#0D0D0C] transition-all duration-200 cursor-pointer"
+            className="group inline-flex items-center justify-center px-7 sm:px-8 py-3.5 text-xs sm:text-sm font-medium tracking-wide uppercase text-[#F9F9F6] bg-[#111111] rounded-none hover:bg-[#0D0D0C] transition-all duration-200 cursor-pointer"
           >
             <span>{t('hero.cta', 'Réserver un Conseil')}</span>
             <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />

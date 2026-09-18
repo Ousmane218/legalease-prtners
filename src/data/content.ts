@@ -133,13 +133,13 @@ export const useContent = () => {
     {
       id: 'croissance',
       name: 'Croissance',
-      tagline: 'M&A, cessions, acquisitions et partenariats stratégiques.',
+      tagline: 'M&A, cessions, acquisitions et joint-ventures.',
       voletFinancier: {
         title: 'Volet Financier',
         description: 'Due diligence & modélisation.',
         points: [
           'Due diligence financière',
-          'Modélisation des synergies'
+          'Modélisation des impacts'
         ],
       },
       voletJuridique: {
@@ -193,8 +193,8 @@ export const useContent = () => {
   const STATS_DATA: StatItem[] = []; // Removed
 
   const LEGAL_INFO = {
-    entity: 'LegalEase Partners',
-    siege: 'Villa N°112B Centenaire, Dakar, Sénégal',
+    entity: 'LegalEase Partners SAS',
+    siege: 'Villa N°112B Centenaire, Dakar',
     rccm: 'SN DKR 2026 B 16076',
     ninea: '013018818 2A5',
     cadre: t('legal_info.cadre', 'Sénégal, OHADA, UEMOA'),

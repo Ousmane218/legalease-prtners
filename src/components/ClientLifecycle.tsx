@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
+import { ChevronRight, ArrowRight } from 'lucide-react';
 import { useContent } from '../data/content';
 import { useTranslation } from 'react-i18next';
 
@@ -11,17 +11,77 @@ interface ClientLifecycleProps {
 export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps) {
   const { LIFECYCLE_STAGES } = useContent();
   const { t } = useTranslation();
-  const [activeStageIndex, setActiveStageIndex] = useState<number>(2);
+  const [activeStageIndex, setActiveStageIndex] = useState<number | null>(2);
 
-  const currentStage = LIFECYCLE_STAGES[activeStageIndex];
+  const currentStage = activeStageIndex !== null ? LIFECYCLE_STAGES[activeStageIndex] : null;
 
-  const handleNext = () => {
-    setActiveStageIndex((prev) => (prev < LIFECYCLE_STAGES.length - 1 ? prev + 1 : 0));
-  };
+  // Extracted content renderer to reuse for desktop (bottom) and mobile (inline)
+  const renderStageContent = (stage: typeof LIFECYCLE_STAGES[0]) => (
+    <div className="space-y-8 md:space-y-12">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[#111111]/10">
+        <div className="max-w-2xl">
+          <p className="font-serif-editorial text-2xl sm:text-3xl text-[#111111] font-light italic leading-snug">
+            "{stage.tagline}"
+          </p>
+        </div>
 
-  const handlePrev = () => {
-    setActiveStageIndex((prev) => (prev > 0 ? prev - 1 : LIFECYCLE_STAGES.length - 1));
-  };
+        <button
+          onClick={onOpenBooking}
+          className="group inline-flex items-center text-sm font-medium tracking-wide uppercase text-[#111111] hover:text-[#C5A880] transition-colors shrink-0"
+        >
+          Prendre rendez-vous
+          <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+        </button>
+      </div>
+
+      {/* 3-Column Split Grid - Open Editorial Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 pt-2">
+        
+        {/* Volet Juridique */}
+        <div className="flex flex-col">
+          <h3 className="font-mono text-[11px] tracking-widest uppercase text-[#111111] border-b border-[#111111]/10 pb-3 mb-5">
+            {stage.voletJuridique.title}
+          </h3>
+          <ul className="space-y-4">
+            {stage.voletJuridique.points.map((pt, i) => (
+              <li key={i} className="text-sm text-[#111111]/80 font-light leading-relaxed">
+                {pt}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Volet Fiscal */}
+        <div className="flex flex-col">
+          <h3 className="font-mono text-[11px] tracking-widest uppercase text-[#111111] border-b border-[#111111]/10 pb-3 mb-5">
+            {stage.voletFiscal.title}
+          </h3>
+          <ul className="space-y-4">
+            {stage.voletFiscal.points.map((pt, i) => (
+              <li key={i} className="text-sm text-[#111111]/80 font-light leading-relaxed">
+                {pt}
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Volet Financier */}
+        <div className="flex flex-col">
+          <h3 className="font-mono text-[11px] tracking-widest uppercase text-[#111111] border-b border-[#111111]/10 pb-3 mb-5">
+            {stage.voletFinancier.title}
+          </h3>
+          <ul className="space-y-4">
+            {stage.voletFinancier.points.map((pt, i) => (
+              <li key={i} className="text-sm text-[#111111]/80 font-light leading-relaxed">
+                {pt}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  );
 
   return (
     <section
@@ -43,26 +103,28 @@ export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps)
           </p>
         </div>
 
-        {/* Interactive Horizontal Timeline with Clickable Stages */}
-        <div className="relative mb-12 sm:mb-16">
-          <div className="flex items-center justify-between overflow-x-auto pb-4 md:pb-0 gap-3 sm:gap-4 z-10 relative no-scrollbar border-b border-[#111111]/10">
+        {/* --- DESKTOP VIEW --- */}
+        <div className="hidden md:block">
+          {/* Desktop Editorial Index */}
+          <div className="flex items-center justify-between border-b border-[#111111]/10 mb-16">
             {LIFECYCLE_STAGES.map((stage, index) => {
               const isSelected = index === activeStageIndex;
               return (
                 <button
                   key={stage.id}
                   onClick={() => setActiveStageIndex(index)}
-                  className={`relative shrink-0 px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer ${
-                    isSelected
-                      ? 'text-[#111111]'
-                      : 'text-[#111111]/50 hover:text-[#111111]'
-                  }`}
+                  className={`relative flex-1 py-4 text-left transition-all cursor-pointer group`}
                 >
-                  <span>{stage.name}</span>
+                  <div className={`text-xs font-mono mb-1 ${isSelected ? 'text-[#C5A880]' : 'text-[#111111]/40 group-hover:text-[#111111]/60'}`}>
+                    0{index + 1}
+                  </div>
+                  <div className={`text-sm font-medium tracking-wide uppercase ${isSelected ? 'text-[#111111]' : 'text-[#111111]/50 group-hover:text-[#111111]'}`}>
+                    {stage.name}
+                  </div>
                   {isSelected && (
                     <motion.div
-                      layoutId="activeTimelinePill"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#111111]"
+                      layoutId="activeTimelineRule"
+                      className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#111111]"
                     />
                   )}
                 </button>
@@ -70,113 +132,63 @@ export default function ClientLifecycle({ onOpenBooking }: ClientLifecycleProps)
             })}
           </div>
 
-          <div className="flex items-center justify-end space-x-2 mt-4 md:hidden">
-            <button
-              onClick={handlePrev}
-              className="p-2 text-[#111111]/50 hover:text-[#111111]"
-              aria-label="Étape précédente"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <span className="text-sm font-medium">
-              {activeStageIndex + 1} / {LIFECYCLE_STAGES.length}
-            </span>
-            <button
-              onClick={handleNext}
-              className="p-2 text-[#111111]/50 hover:text-[#111111]"
-              aria-label="Étape suivante"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+          {/* Desktop Content Area */}
+          <AnimatePresence mode="wait">
+            {currentStage && (
+              <motion.div
+                key={currentStage.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                {renderStageContent(currentStage)}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        {/* Customized Visual Grid for Selected Stage */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentStage.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="space-y-12"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[#111111]/10">
-              <div className="max-w-2xl">
-                <p className="font-serif-editorial text-2xl sm:text-3xl text-[#111111] font-light italic leading-snug">
-                  "{currentStage.tagline}"
-                </p>
+        {/* --- MOBILE VIEW --- */}
+        <div className="md:hidden space-y-0 border-t border-[#111111]/10">
+          {LIFECYCLE_STAGES.map((stage, index) => {
+            const isSelected = index === activeStageIndex;
+            return (
+              <div key={stage.id} className="border-b border-[#111111]/10">
+                <button
+                  onClick={() => setActiveStageIndex(isSelected ? null : index)}
+                  className={`w-full py-5 flex items-center justify-between text-left`}
+                >
+                  <div className="flex items-center space-x-4">
+                    <span className={`text-xs font-mono ${isSelected ? 'text-[#C5A880]' : 'text-[#111111]/40'}`}>
+                      0{index + 1}
+                    </span>
+                    <span className={`text-sm font-medium tracking-wide uppercase ${isSelected ? 'text-[#111111]' : 'text-[#111111]/60'}`}>
+                      {stage.name}
+                    </span>
+                  </div>
+                  <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${isSelected ? 'rotate-90 text-[#111111]' : 'text-[#111111]/40'}`} />
+                </button>
+                
+                {/* Mobile Inline Content */}
+                <AnimatePresence>
+                  {isSelected && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-8 pt-2">
+                        {renderStageContent(stage)}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-
-              <button
-                onClick={onOpenBooking}
-                className="group inline-flex items-center text-sm font-medium tracking-wide uppercase text-[#111111] hover:text-[#C5A880] transition-colors shrink-0"
-              >
-                Prendre rendez-vous
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
-            </div>
-
-            {/* 3-Column Split Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-              
-              {/* Volet Financier */}
-              <div className="flex flex-col space-y-4">
-                <h3 className="font-serif-title text-xl tracking-wide text-[#111111] border-b border-[#111111]/10 pb-4">
-                  {currentStage.voletFinancier.title}
-                </h3>
-                <p className="text-sm text-[#111111]/80 font-medium">
-                  {currentStage.voletFinancier.description}
-                </p>
-                <ul className="space-y-3 pt-2">
-                  {currentStage.voletFinancier.points.map((pt, i) => (
-                    <li key={i} className="text-sm text-[#111111]/70 flex items-start space-x-2">
-                      <span className="text-[#C5A880] mt-1 text-[10px]">●</span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Volet Juridique */}
-              <div className="flex flex-col space-y-4">
-                <h3 className="font-serif-title text-xl tracking-wide text-[#111111] border-b border-[#111111]/10 pb-4">
-                  {currentStage.voletJuridique.title}
-                </h3>
-                <p className="text-sm text-[#111111]/80 font-medium">
-                  {currentStage.voletJuridique.description}
-                </p>
-                <ul className="space-y-3 pt-2">
-                  {currentStage.voletJuridique.points.map((pt, i) => (
-                    <li key={i} className="text-sm text-[#111111]/70 flex items-start space-x-2">
-                      <span className="text-[#C5A880] mt-1 text-[10px]">●</span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Volet Fiscal */}
-              <div className="flex flex-col space-y-4">
-                <h3 className="font-serif-title text-xl tracking-wide text-[#111111] border-b border-[#111111]/10 pb-4">
-                  {currentStage.voletFiscal.title}
-                </h3>
-                <p className="text-sm text-[#111111]/80 font-medium">
-                  {currentStage.voletFiscal.description}
-                </p>
-                <ul className="space-y-3 pt-2">
-                  {currentStage.voletFiscal.points.map((pt, i) => (
-                    <li key={i} className="text-sm text-[#111111]/70 flex items-start space-x-2">
-                      <span className="text-[#C5A880] mt-1 text-[10px]">●</span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            );
+          })}
+        </div>
 
       </div>
     </section>

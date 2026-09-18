@@ -114,7 +114,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <button
             id="nav-cta-btn"
             onClick={onOpenBooking}
-            className="group relative inline-flex items-center justify-center px-4 sm:px-5 py-2 text-xs font-medium tracking-wide uppercase text-[#111111] border border-[#111111] rounded hover:bg-[#111111] hover:text-[#F9F9F6] transition-all duration-200 focus:outline-none cursor-pointer"
+            className="group relative inline-flex items-center justify-center px-4 sm:px-5 py-2 text-xs font-medium tracking-wide uppercase text-[#111111] border border-[#111111] rounded-none hover:bg-[#111111] hover:text-[#F9F9F6] transition-all duration-200 focus:outline-none cursor-pointer"
           >
             <span>{t('nav.book')}</span>
             <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -167,7 +167,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                     setMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide uppercase text-white bg-[#111111] rounded"
+                  className="w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide uppercase text-white bg-[#111111] rounded-none"
                 >
                   <span>{t('nav.book')}</span>
                   <ArrowUpRight className="w-3.5 h-3.5 ml-1.5" />
